@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Portfolio de Hamada Faris, étudiant ingénieur en Intelligence Artificielle et Big Data.">
+
+  <meta name="theme-color" content="#101114">
+
+  <title>Hamada Faris — AI & Data Engineering</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body id="top">
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <a class="logo" href="#top">hf<span>.</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">À propos</a>
+      <a href="#projects">Projets</a>
+      <a href="#experience">Expériences</a>
+      <a href="#skills">Compétences</a>
+      <a href="#education">Formation</a>
+    </nav>
+
+    <a class="nav-contact" href="#contact">Me contacter ↗</a>
+
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false">
+      ☰
+    </button>
+  </header>
+
+  <main>
+
+    <!-- ACCUEIL -->
+    <section class="hero section-shell" id="home">
+
+      <div class="hero-copy">
+        <p class="eyebrow">
+          <span class="status-dot"></span>
+          IA · DATA · SOFTWARE ENGINEERING
+        </p>
+
+        <h1>
+          Hamada<br>
+          <span class="accent-name">Faris.</span>
+        </h1>
+
+        <h2>Étudiant ingénieur en IA & Big Data</h2>
+
+        <p class="hero-description">
+          Je transforme les données en solutions intelligentes,
+          de l'automatisation des traitements à la conception
+          de systèmes d'intelligence artificielle.
+        </p>
+
+        <p class="availability">
+          <span class="status-dot"></span>
+          À la recherche d'un stage PFE de 4 à 6 mois —
+          disponible à partir de février 2027.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">
+            Découvrir mes projets ↗
+          </a>
+
+          
+<a class="button button-secondary"
+   href="assets/cv-hamada-faris.pdf"
+   download="Hamada_Faris_CV.pdf">
+  Télécharger mon CV ↓
+</a>
+
+        </div>
+
+        <div class="social-links">
+          <a href="https://linkedin.com/in/hamada-faris"
+             target="_blank"
+             rel="noopener">LinkedIn ↗</a>
+
+          <a href="https://github.com/"
+             target="_blank"
+             rel="noopener">GitHub ↗</a>
+
+          <a href="mailto:hamadafaris2024@gmail.com">Email ↗</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-top">
+          <span><span class="status-dot"></span> PROFIL INGÉNIEUR</span>
+          <span>CASABLANCA · MAROC</span>
+        </div>
+
+        <div class="portrait-frame">
+          <img src="assets/photo.jpg"
+               alt="Portrait de Hamada Faris"
+               class="portrait"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+
+          <div class="portrait-placeholder">
+            <span>HF<span class="accent">.</span></span>
+            <small>AI · DATA · ENGINEERING</small>
+          </div>
+        </div>
+
+        <div class="visual-bottom">
+          <span>PYTHON</span>
+          <span>MACHINE LEARNING</span>
+          <span>GENAI</span>
+        </div>
+
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+      </div>
+
+      <div class="hero-footer">
+        <span>DATA SCIENCE / IA / DÉVELOPPEMENT</span>
+        <a href="#about">DÉFILER ↓</a>
+      </div>
+
+    </section>
+
+    <!-- A PROPOS -->
+    <section class="content-section section-shell" id="about">
+
+      <p class="section-index">01 / À PROPOS</p>
+
+      <div class="section-heading">
+        <h2>Des données brutes,<br>
+          <em>des idées concrètes.</em>
+        </h2>
+
+        <p>
+          Un profil orienté développement logiciel, automatisation
+          et intelligence artificielle.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <article class="about-card about-main">
+          <span class="card-label">MON APPROCHE</span>
+          <h3>Comprendre. Construire. Optimiser.</h3>
+          <p>
+            Étudiant ingénieur en dernière année de Génie Informatique,
+            spécialisé en Intelligence Artificielle et Big Data.
+            J'aime concevoir des solutions qui associent programmation,
+            traitement des données et IA pour répondre à des problèmes réels.
+          </p>
+        </article>
+
+        <article class="about-card">
+          <span class="card-label">01 — SPÉCIALITÉ</span>
+          <h3>Intelligence artificielle</h3>
+          <p>Machine Learning, NLP, IA générative et systèmes multi-agents.</p>
+        </article>
+
+        <article class="about-card">
+          <span class="card-label">02 — INGÉNIERIE</span>
+          <h3>Automatisation & Data</h3>
+          <p>Collecte, nettoyage, structuration et exploitation des données.</p>
+        </article>
+      </div>
+
+    </section>
+
+    <!-- PROJETS -->
+    <section class="content-section section-shell" id="projects">
+
+      <p class="section-index">02 / PROJETS</p>
+
+      <div class="section-heading">
+        <h2>Des problèmes concrets,<br>
+          <em>des solutions utiles.</em>
+        </h2>
+
+        <p>Une sélection de projets académiques et techniques.</p>
+      </div>
+
+      <div class="project-grid">
+
+        <article class="project-card">
+          <div class="project-art art-iot">
+            <span class="art-label">IOT / IOMT</span>
+            <div class="iot-graphic">
+              <div class="pulse-line"></div>
+              <span class="iot-node node-one"></span>
+              <span class="iot-node node-two"></span>
+              <span class="iot-node node-three"></span>
+            </div>
+            <span class="art-caption">MONITORING · ALERTES</span>
+          </div>
+
+          <div class="project-body">
+            <p class="project-type">01 / SYSTÈME EMBARQUÉ & DATA</p>
+            <h3>Monitoring de pompes médicales</h3>
+            <p>
+              Développement d'un système IoT/IoMT pour surveiller
+              les paramètres de pompes à perfusion, détecter
+              les anomalies et générer des alertes en temps réel.
+            </p>
+            <div class="tags">
+              <span>IoT</span><span>Python</span>
+              <span>Data Analysis</span><span>Monitoring</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-art art-ai">
+            <span class="art-label">GENERATIVE AI</span>
+            <div class="ai-graphic">
+              <div class="ai-core">AI</div>
+              <span class="ai-link link-one"></span>
+              <span class="ai-link link-two"></span>
+              <span class="ai-link link-three"></span>
+              <span class="ai-link link-four"></span>
+            </div>
+            <span class="art-caption">AGENTS · NLP · AUTOMATION</span>
+          </div>
+
+          <div class="project-body">
+            <p class="project-type">02 / STAGE · SNRT</p>
+            <h3>Système multi-agents IA</h3>
+            <p>
+              Conception d'une architecture composée d'un orchestrateur
+              et d'agents spécialisés pour analyser des demandes
+              en langage naturel et générer des réponses structurées.
+            </p>
+            <div class="tags">
+              <span>Python</span><span>GenAI</span>
+              <span>NLP</span><span>Multi-Agent Systems</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-art art-data">
+            <span class="art-label">DATA ENGINEERING</span>
+            <div class="data-bars">
+              <span style="--bar-height:35%"></span>
+              <span style="--bar-height:62%"></span>
+              <span style="--bar-height:48%"></span>
+              <span style="--bar-height:83%"></span>
+              <span style="--bar-height:70%"></span>
+              <span style="--bar-height:100%"></span>
+              <span style="--bar-height:76%"></span>
+            </div>
+            <span class="art-caption">COLLECTE · TRANSFORMATION</span>
+          </div>
+
+          <div class="project-body">
+            <p class="project-type">03 / STAGE · COMPLY WORLD</p>
+            <h3>Automatisation du Web Scraping</h3>
+            <p>
+              Développement de scripts Python pour collecter,
+              extraire, nettoyer et structurer des données provenant
+              de différentes sources web, avec une interface interne
+              de filtrage et d'analyse.
+            </p>
+            <div class="tags">
+              <span>Python</span><span>Web Scraping</span>
+              <span>SQL</span><span>Automation</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-art art-energy">
+            <span class="art-label">DATA ANALYTICS</span>
+            <div class="energy-chart">
+              <svg viewBox="0 0 300 110"
+                   role="img"
+                   aria-label="Illustration de courbe de consommation énergétique">
+                <path d="M0 85 L30 70 L60 78 L90 42 L120 58 L150 30 L180 48 L210 20 L240 38 L270 12 L300 25"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"/>
+              </svg>
+            </div>
+            <span class="art-caption">ANALYSE · OPTIMISATION</span>
+          </div>
+
+          <div class="project-body">
+            <p class="project-type">04 / PROJET ACADÉMIQUE</p>
+            <h3>Analyse de données énergétiques</h3>
+            <p>
+              Analyse exploratoire de données de consommation
+              électrique résidentielle pour identifier les tendances
+              et proposer des axes d'optimisation.
+            </p>
+            <div class="tags">
+              <span>Python</span><span>Pandas</span>
+              <span>NumPy</span><span>Data Analysis</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCES -->
+    <section class="content-section section-shell" id="experience">
+
+      <p class="section-index">03 / EXPÉRIENCES</p>
+
+      <div class="section-heading">
+        <h2>Apprendre sur le terrain,<br>
+          <em>progresser en équipe.</em>
+        </h2>
+      </div>
+
+      <div class="timeline">
+
+        <article class="timeline-item">
+          <div class="timeline-date">06/2026 — 08/2026</div>
+          <div class="timeline-content">
+            <span class="timeline-dot"></span>
+            <p class="project-type">STAGE · RABAT</p>
+            <h3>Stagiaire ingénieur en intelligence artificielle</h3>
+            <h4>SNRT — Société Nationale de Radiodiffusion et de Télévision</h4>
+            <ul>
+              <li>Conception et développement d'un système multi-agents basé sur l'IA.</li>
+              <li>Conception d'un orchestrateur et d'agents spécialisés.</li>
+              <li>Intégration de solutions d'IA générative et de NLP.</li>
+              <li>Automatisation du traitement des demandes des équipes éditoriales et numériques.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">05/2025 — 07/2025</div>
+          <div class="timeline-content">
+            <span class="timeline-dot"></span>
+            <p class="project-type">STAGE · DÉVELOPPEMENT DATA</p>
+            <h3>Stagiaire développeur Back-end / Data</h3>
+            <h4>Comply World</h4>
+            <ul>
+              <li>Développement d'une solution automatisée de Web Scraping en Python.</li>
+              <li>Extraction, nettoyage et structuration de données.</li>
+              <li>Optimisation des performances et de la fiabilité des scripts.</li>
+              <li>Développement d'une interface interne pour filtrer, stocker et analyser les données.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">06/2023 — 08/2023</div>
+          <div class="timeline-content">
+            <span class="timeline-dot"></span>
+            <p class="project-type">STAGE · CASABLANCA</p>
+            <h3>Stagiaire développeur Full-Stack</h3>
+            <h4>Groupe COSUMAR</h4>
+            <ul>
+              <li>Développement d'une application web de gestion des demandes informatiques.</li>
+              <li>Développement des fonctionnalités front-end et back-end avec MySQL.</li>
+              <li>Contribution à une réduction de 30 % des délais de traitement des demandes informatiques.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- COMPETENCES -->
+    <section class="content-section section-shell" id="skills">
+
+      <p class="section-index">04 / COMPÉTENCES</p>
+
+      <div class="section-heading">
+        <h2>Une boîte à outils<br>
+          <em>pour construire.</em>
+        </h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <article class="skill-card">
+          <span class="skill-number">01</span>
+          <h3>IA & GenAI</h3>
+          <div class="tags">
+            <span>Machine Learning</span><span>Generative AI</span>
+            <span>NLP</span><span>Multi-Agent Systems</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <span class="skill-number">02</span>
+          <h3>Data & Traitement</h3>
+          <div class="tags">
+            <span>Pandas</span><span>NumPy</span>
+            <span>Data Processing</span><span>Web Scraping</span>
+            <span>SQL</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <span class="skill-number">03</span>
+          <h3>Programmation</h3>
+          <div class="tags">
+            <span>Python</span><span>Java</span>
+            <span>C</span><span>JavaScript</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <span class="skill-number">04</span>
+          <h3>Bases de données</h3>
+          <div class="tags">
+            <span>MySQL</span><span>MongoDB</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <span class="skill-number">05</span>
+          <h3>Développement Web</h3>
+          <div class="tags">
+            <span>React</span><span>PHP</span>
+            <span>HTML</span><span>CSS</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- FORMATION -->
+    <section class="content-section section-shell" id="education">
+
+      <p class="section-index">05 / FORMATION</p>
+
+      <div class="section-heading">
+        <h2>Les fondations<br>
+          <em>de l'ingénieur.</em>
+        </h2>
+      </div>
+
+      <div class="education-list">
+        <article class="education-item">
+          <span class="education-date">2022 — 2027</span>
+          <div>
+            <h3>Diplôme d'Ingénieur d'État en Informatique</h3>
+            <p>Spécialité Intelligence Artificielle & Big Data</p>
+            <span class="institution">HESTIM · Casablanca</span>
+          </div>
+        </article>
+
+        <article class="education-item">
+          <span class="education-date">2021 — 2022</span>
+          <div>
+            <h3>Baccalauréat en Sciences Physiques</h3>
+            <span class="institution">Lycée EL MAJD · Casablanca</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="certifications">
+        <p class="card-label">CERTIFICATIONS</p>
+
+        <div class="certification-item">
+          <span>01</span>
+          <p>IBM — AI Engineering Professional Certificate</p>
+        </div>
+
+        <div class="certification-item">
+          <span>02</span>
+          <p>Microsoft — Azure AI Fundamentals (AI-901)</p>
+        </div>
+
+        <div class="certification-item">
+          <span>03</span>
+          <p>Google — Advanced Data Analytics Professional Certificate</p>
+        </div>
+      </div>
+
+      <div class="languages">
+        <p class="card-label">LANGUES</p>
+        <p><strong>Français</strong> — Courant</p>
+        <p><strong>Anglais</strong> — Intermédiaire avancé</p>
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="content-section section-shell contact-section" id="contact">
+
+      <p class="section-index">06 / CONTACT</p>
+
+      <h2>Construisons quelque chose<br>
+        <em>d'intelligent.</em>
+      </h2>
+
+      <p class="contact-description">
+        Disponible à partir de février 2027 pour un stage PFE
+        de 4 à 6 mois en Data Engineering, Data Science ou IA.
+      </p>
+
+      <a class="contact-email"
+         href="mailto:hamadafaris2024@gmail.com">
+        hamadafaris2024@gmail.com ↗
+      </a>
+
+      <div class="contact-details">
+        <p><span>TÉLÉPHONE</span>
+          <a href="tel:+212644137938">+212 644 137938</a>
+        </p>
+
+        <p><span>LINKEDIN</span>
+          <a href="https://linkedin.com/in/hamada-faris"
+             target="_blank" rel="noopener">Voir mon profil ↗</a>
+        </p>
+
+        <p><span>CV</span>
+          <a href="assets/cv-hamada-faris.pdf"
+             target="_blank" rel="noopener">Version PDF ↓</a>
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <a class="logo" href="#top">hf<span>.</span></a>
+    <p>© <span id="year">2026</span> Hamada Faris · Conçu avec passion.</p>
+    <a href="#top">RETOUR EN HAUT ↑</a>
+  </footer>
+
+</body>
+</html>
