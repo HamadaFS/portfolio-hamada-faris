@@ -1092,3 +1092,47 @@ button {
 .nav-links a[aria-current="location"] {
   color: var(--orange);
 }
+
+/* Liens sociaux du hero */
+.hero-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 22px;
+}
+
+.hero-links .hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #a9bfd7;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-links .hero-link span {
+  color: #ffad38;
+  font-size: 13px;
+}
+
+.hero-links .hero-link:hover {
+  color: #ffad38;
+  transform: translateY(-2px);
+}
+
+.hero-links .hero-link:focus-visible {
+  outline: 2px solid #ffad38;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+/* Espacement sur les petits écrans */
+@media (max-width: 600px) {
+  .hero-links {
+    gap: 16px;
+    margin-top: 20px;
+  }
+}
