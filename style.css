@@ -98,6 +98,130 @@ button {
   color: var(--text);
   border-bottom: 1px solid var(--orange);
   padding-bottom: 4px;
+  white-space: nowrap;
+}
+
+/* ── NAV CONTROLS: contact + FR/EN + theme on one line (desktop) ── */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #14171c;
+}
+
+.lang-btn {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lang-btn.active {
+  background: var(--orange);
+  color: #19140d;
+  font-weight: 700;
+}
+
+.theme-btn {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #14171c;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.theme-btn:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.theme-btn svg {
+  display: block;
+  margin: auto;
+}
+
+/* dark mode (default): show sun, hide moon */
+.theme-btn .icon-moon {
+  display: none;
+}
+
+.theme-btn .icon-sun {
+  display: block;
+}
+
+/* light mode: show moon, hide sun */
+html[data-theme="light"] .theme-btn .icon-sun {
+  display: none;
+}
+
+html[data-theme="light"] .theme-btn .icon-moon {
+  display: block;
+}
+
+/* ── LIGHT THEME (keeps same layout, only colors) ── */
+html[data-theme="light"] {
+  --bg: #f5f1e8;
+  --surface: #ffffff;
+  --surface-2: #ece7da;
+  --text: #171a1f;
+  --muted: #5d6874;
+  --border: #ddd5c2;
+}
+
+html[data-theme="light"] body {
+  background:
+    radial-gradient(ellipse at 12% 8%, #ffad4226, transparent 34rem),
+    var(--bg);
+}
+
+html[data-theme="light"] .navbar {
+  background: #f5f1eef2;
+}
+
+html[data-theme="light"] .lang-toggle,
+html[data-theme="light"] .theme-btn,
+html[data-theme="light"] .hero-link {
+  background: #ffffff;
+}
+
+html[data-theme="light"] .hero-visual,
+html[data-theme="light"] .about-card,
+html[data-theme="light"] .skill-card,
+html[data-theme="light"] .project-card {
+  background: linear-gradient(145deg, #ffffff, #efe9dc);
+  box-shadow: 0 20px 50px #3a2f1a14;
+}
+
+html[data-theme="light"] .portrait-frame {
+  background: #e9e2d3;
+}
+
+html[data-theme="light"] .nav-links.open {
+  background: #f5f1eefa;
 }
 
 .menu-toggle {
@@ -117,25 +241,12 @@ button {
 }
 
 .hero {
-  min-height: 700px;
-  padding: 105px 0 32px;
+  min-height: 680px;
+  padding: 64px 0 32px;
   display: grid;
   grid-template-columns: 1.1fr .9fr;
   align-items: center;
-  column-gap: 60px;
-}
-
-/* subtle orange light-ray behind the whole hero */
-.hero::after {
-  content: "";
-  position: absolute;
-  top: -80px;
-  right: 5%;
-  width: 420px;
-  height: 420px;
-  background: radial-gradient(ellipse at 60% 30%, #ffad4218, transparent 65%);
-  pointer-events: none;
-  z-index: 0;
+  column-gap: 65px;
 }
 
 .hero::before,
@@ -282,91 +393,125 @@ button {
   font-size: 12px;
 }
 
-/* ── DATA-FLOW CARD ─────────────────────────────────────── */
+/* ── PORTRAIT CARD ─────────────────────────────────────── */
 .hero-visual {
   position: relative;
   z-index: 1;
   min-width: 0;
+  width: 100%;
+  max-width: 420px;
+  justify-self: end;
+  padding: 20px 20px 18px;
   border: 1px solid var(--border);
   border-radius: 14px;
-  background: linear-gradient(145deg, #181b22, #10121600);
+  background:
+    radial-gradient(ellipse at 50% 80%, #ffad4214, transparent 55%),
+    linear-gradient(145deg, #1a1d23, #111216);
   overflow: hidden;
-  box-shadow: 0 0 0 1px #ffad4212, 0 30px 80px #00000055;
-  padding: 18px 18px 14px;
+  box-shadow: 0 25px 90px #0004;
 }
 
-/* canvas sits behind everything inside the card */
-.df-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: .55;
-}
-
-.df-header {
+.visual-top,
+.visual-bottom {
   position: relative;
   z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
-}
-
-.df-label {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: var(--orange);
-}
-
-.df-loc {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 1px;
+  gap: 12px;
   color: var(--muted);
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  font-size: 9px;
+  letter-spacing: .8px;
 }
 
-.df-svg {
+.visual-top > span:first-child {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--text);
+}
+
+.portrait-frame {
   position: relative;
-  z-index: 2;
   width: 100%;
+  max-width: 360px;
+  aspect-ratio: 1103 / 1426;
   height: auto;
+  margin: 18px auto;
+  overflow: hidden;
+  border-radius: 170px 170px 14px 14px;
+  border: 1px solid #ffffff15;
+  background:
+    radial-gradient(ellipse at 50% 30%, #65513c, transparent 65%),
+    #191b20;
+}
+
+.portrait {
   display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+  filter: saturate(.85);
 }
 
-.df-footer {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
+.portrait-placeholder {
+  display: none;
+  position: absolute;
+  inset: 0;
+  place-content: center;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 40%, #41382d, transparent 60%),
+    #17191e;
+}
+
+.portrait-placeholder > span {
+  display: block;
+  font-size: 80px;
+  font-weight: 700;
+  letter-spacing: -7px;
+}
+
+.portrait-placeholder small {
+  color: var(--muted);
+  font: 10px var(--mono);
+  letter-spacing: 1px;
+}
+
+.visual-bottom {
   flex-wrap: wrap;
-  gap: 7px;
-  margin-top: 10px;
+  justify-content: center;
+  gap: 8px;
 }
 
-.df-badge {
-  padding: 4px 9px;
+.visual-bottom span {
+  padding: 5px 9px;
   border: 1px solid var(--border);
   border-radius: 4px;
+  color: #c7ced8;
+  background: #11131880;
   font-family: var(--mono);
   font-size: 9px;
   letter-spacing: 1px;
-  color: var(--teal);
-  background: #11131880;
 }
 
-.df-caption {
-  margin-left: auto;
-  font-family: var(--mono);
-  font-size: 8px;
-  letter-spacing: 1px;
-  color: var(--muted);
-  opacity: .7;
+.orbit {
+  position: absolute;
+  pointer-events: none;
+  width: 230px;
+  height: 230px;
+  border: 1px solid #ffad421b;
+  border-radius: 50%;
+  left: -160px;
+  bottom: 20px;
+}
+
+.orbit-two {
+  width: 320px;
+  height: 320px;
+  left: -205px;
+  bottom: -25px;
 }
 
 .hero-footer {
@@ -954,6 +1099,11 @@ button {
 @media (max-width: 900px) {
   .navbar {
     padding-inline: 5%;
+    gap: 12px;
+  }
+
+  .nav-controls {
+    gap: 8px;
   }
 
   .nav-links {
@@ -999,8 +1149,14 @@ button {
     display: block;
   }
 
-  .nav-contact {
+  .nav-controls {
     margin-left: auto;
+    gap: 8px;
+  }
+
+  .nav-contact {
+    margin-left: 0;
+    font-size: 12px;
   }
 
   .nav-links {
@@ -1052,6 +1208,7 @@ button {
     max-width: 430px;
     width: 100%;
     margin-inline: auto;
+    justify-self: center;
   }
   .hero-footer {
     margin-top: 30px;
@@ -1141,6 +1298,7 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-top: 27px;
 }
 
 .hero-link {

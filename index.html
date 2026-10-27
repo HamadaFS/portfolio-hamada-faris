@@ -30,14 +30,31 @@
     <a class="logo" href="#top">hf<span>.</span></a>
 
     <nav class="nav-links" id="navLinks">
-      <a href="#about">À propos</a>
-      <a href="#projects">Projets</a>
-      <a href="#experience">Expériences</a>
-      <a href="#skills">Compétences</a>
-      <a href="#education">Formation</a>
+      <a href="#about" data-lang-fr="À propos" data-lang-en="About">À propos</a>
+      <a href="#projects" data-lang-fr="Projets" data-lang-en="Projects">Projets</a>
+      <a href="#experience" data-lang-fr="Expériences" data-lang-en="Experience">Expériences</a>
+      <a href="#skills" data-lang-fr="Compétences" data-lang-en="Skills">Compétences</a>
+      <a href="#education" data-lang-fr="Formation" data-lang-en="Education">Formation</a>
     </nav>
 
-    <a class="nav-contact" href="#contact">Me contacter ↗</a>
+    <div class="nav-controls">
+      <a class="nav-contact" href="#contact"
+         data-lang-fr="Me contacter ↗" data-lang-en="Contact me ↗">Me contacter ↗</a>
+
+      <!-- FR / EN toggle -->
+      <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+
+      <!-- Light / Dark theme toggle -->
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
+        <!-- sun icon (shown in dark mode) -->
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <!-- moon icon (shown in light mode) -->
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
 
     <button class="menu-toggle"
             id="menuToggle"
@@ -55,7 +72,8 @@
       <div class="hero-copy">
         <p class="eyebrow">
           <span class="status-dot"></span>
-          IA · DATA · SOFTWARE ENGINEERING
+          <span data-lang-fr="IA · DATA · SOFTWARE ENGINEERING"
+                data-lang-en="AI · DATA · SOFTWARE ENGINEERING">IA · DATA · SOFTWARE ENGINEERING</span>
         </p>
 
         <h1>
@@ -63,9 +81,12 @@
           <span class="accent-name">Faris.</span>
         </h1>
 
-        <h2>Étudiant ingénieur en IA &amp; Big Data</h2>
+        <h2 data-lang-fr="Étudiant ingénieur en IA &amp; Big Data"
+            data-lang-en="AI &amp; Big Data Engineering Student">Étudiant ingénieur en IA &amp; Big Data</h2>
 
-        <p class="hero-description">
+        <p class="hero-description"
+           data-lang-fr="Je transforme les données en solutions intelligentes, de l’automatisation des traitements à la conception de systèmes d’intelligence artificielle."
+           data-lang-en="I turn data into intelligent solutions, from automating workflows to designing artificial intelligence systems.">
           Je transforme les données en solutions intelligentes,
           de l'automatisation des traitements à la conception
           de systèmes d'intelligence artificielle.
@@ -73,17 +94,22 @@
 
         <p class="availability">
           <span class="status-dot"></span>
-          À la recherche d'un stage PFE de 4 à 6 mois —
-          disponible à partir de février 2027.
+          <span data-lang-fr="À la recherche d’un stage PFE de 4 à 6 mois — disponible à partir de février 2027."
+                data-lang-en="Seeking a 4-to-6-month final-year internship — available from February 2027.">À la recherche d'un stage PFE de 4 à 6 mois —
+            disponible à partir de février 2027.</span>
         </p>
 
         <div class="hero-actions">
-          <a class="button button-primary" href="#projects">
+          <a class="button button-primary" href="#projects"
+             data-lang-fr="Découvrir mes projets ↗"
+             data-lang-en="Discover my projects ↗">
             Découvrir mes projets ↗
           </a>
           <a class="button button-secondary"
              href="assets/cv-hamada-faris.pdf"
-             download="Hamada_Faris_CV.pdf">
+             download="Hamada_Faris_CV.pdf"
+             data-lang-fr="Télécharger mon CV ↓"
+             data-lang-en="Download my CV ↓">
             Télécharger mon CV ↓
           </a>
         </div>
@@ -106,106 +132,40 @@
         </div>
       </div>
 
-      <!-- DATA-FLOW CARD -->
-      <div class="hero-visual" aria-hidden="true">
-        <canvas class="df-canvas" id="dfCanvas"></canvas>
+      <!-- PORTRAIT CARD -->
+      <div class="hero-visual">
 
-        <div class="df-header">
-          <span class="df-label">DATA FLOW</span>
-          <span class="df-loc"><span class="status-dot"></span> CASABLANCA · MAROC</span>
+        <div class="visual-top">
+          <span><span class="status-dot"></span> PROFIL INGÉNIEUR</span>
+          <span>CASABLANCA · MAROC</span>
         </div>
 
-        <!-- pipeline SVG -->
-        <svg class="df-svg" viewBox="0 0 340 260" xmlns="http://www.w3.org/2000/svg">
-          <!-- grid lines -->
-          <defs>
-            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#ffffff07" stroke-width="1"/>
-            </pattern>
-            <!-- orange glow filter -->
-            <filter id="glow-o" x="-40%" y="-40%" width="180%" height="180%">
-              <feGaussianBlur stdDeviation="3" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-            <filter id="glow-t" x="-40%" y="-40%" width="180%" height="180%">
-              <feGaussianBlur stdDeviation="2.5" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-            <!-- animated dash for pipeline paths -->
-            <style>
-              .df-path-o { stroke-dasharray: 6 5; animation: dash-o 2.4s linear infinite; }
-              .df-path-t { stroke-dasharray: 6 5; animation: dash-t 3s linear infinite; }
-              .df-path-w { stroke-dasharray: 6 5; animation: dash-w 2s linear infinite; }
-              @keyframes dash-o { to { stroke-dashoffset: -44; } }
-              @keyframes dash-t { to { stroke-dashoffset: -44; } }
-              @keyframes dash-w { to { stroke-dashoffset: -44; } }
-              .df-node-pulse { animation: node-pulse 2s ease-in-out infinite; }
-              @keyframes node-pulse {
-                0%,100% { opacity:.7; r:5; }
-                50%      { opacity:1;  r:7; }
-              }
-            </style>
-          </defs>
-
-          <rect width="340" height="260" fill="url(#grid)"/>
-
-          <!-- horizontal spine: orange -->
-          <path class="df-path-o" d="M 30 130 H 310"
-                fill="none" stroke="#ffad42" stroke-width="1.5"
-                filter="url(#glow-o)" opacity=".85"/>
-
-          <!-- branch up: teal -->
-          <path class="df-path-t" d="M 100 130 V 60 H 240 V 130"
-                fill="none" stroke="#66d4bd" stroke-width="1.2"
-                filter="url(#glow-t)" opacity=".75"/>
-
-          <!-- branch down: white -->
-          <path class="df-path-w" d="M 100 130 V 200 H 240 V 130"
-                fill="none" stroke="#ece9e3" stroke-width="1"
-                opacity=".3"/>
-
-          <!-- nodes on spine -->
-          <circle cx="30"  cy="130" r="5" fill="#ffad42" filter="url(#glow-o)"/>
-          <circle cx="100" cy="130" r="5" fill="#ffad42" filter="url(#glow-o)"/>
-          <circle cx="170" cy="130" r="5" fill="#ffad42" filter="url(#glow-o)" class="df-node-pulse"/>
-          <circle cx="240" cy="130" r="5" fill="#ffad42" filter="url(#glow-o)"/>
-          <circle cx="310" cy="130" r="5" fill="#ffad42" filter="url(#glow-o)"/>
-
-          <!-- nodes on teal branch -->
-          <circle cx="100" cy="60"  r="4" fill="#66d4bd" filter="url(#glow-t)"/>
-          <circle cx="170" cy="60"  r="4" fill="#66d4bd" filter="url(#glow-t)" class="df-node-pulse"/>
-          <circle cx="240" cy="60"  r="4" fill="#66d4bd" filter="url(#glow-t)"/>
-
-          <!-- nodes on white branch -->
-          <circle cx="100" cy="200" r="3" fill="#ece9e3" opacity=".5"/>
-          <circle cx="170" cy="200" r="3" fill="#ece9e3" opacity=".5"/>
-          <circle cx="240" cy="200" r="3" fill="#ece9e3" opacity=".5"/>
-
-          <!-- stage labels -->
-          <text x="30"  y="148" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#ffad42" opacity=".9">COLLECT</text>
-          <text x="100" y="148" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#ffad42" opacity=".9">CLEAN</text>
-          <text x="170" y="148" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#ffad42" opacity=".9">MODEL</text>
-          <text x="240" y="148" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#ffad42" opacity=".9">API</text>
-          <text x="310" y="148" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#ffad42" opacity=".9">DEPLOY</text>
-
-          <!-- teal branch labels -->
-          <text x="170" y="52" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#66d4bd" opacity=".8">TRANSFORM</text>
-
-          <!-- white branch labels -->
-          <text x="170" y="216" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#ece9e3" opacity=".4">MONITOR</text>
-        </svg>
-
-        <div class="df-footer">
-          <span class="df-badge">PYTHON</span>
-          <span class="df-badge">ML</span>
-          <span class="df-badge">GENAI</span>
-          <span class="df-caption">RAW DATA → PRODUCTION</span>
+        <div class="portrait-frame">
+          <img src="assets/photo.jpg"
+               alt="Portrait de Hamada Faris"
+               class="portrait"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+          <div class="portrait-placeholder">
+            <span>HF<span class="accent">.</span></span>
+            <small>AI · DATA · ENGINEERING</small>
+          </div>
         </div>
+
+        <div class="visual-bottom">
+          <span>PYTHON</span>
+          <span>MACHINE LEARNING</span>
+          <span>GENAI</span>
+        </div>
+
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
       </div>
 
       <div class="hero-footer">
-        <span>DATA SCIENCE / IA / DÉVELOPPEMENT</span>
-        <a href="#about">DÉFILER ↓</a>
+        <span data-lang-fr="DATA SCIENCE / IA / DÉVELOPPEMENT"
+              data-lang-en="DATA SCIENCE / AI / DEVELOPMENT">DATA SCIENCE / IA / DÉVELOPPEMENT</span>
+        <a href="#about" data-lang-fr="DÉFILER ↓" data-lang-en="SCROLL ↓">DÉFILER ↓</a>
       </div>
 
     </section>
