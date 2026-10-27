@@ -1,6 +1,11 @@
 
 "use strict";
 
+// Initialise les icônes Lucide.
+if (typeof lucide !== "undefined") {
+  lucide.createIcons();
+}
+
 // Année automatique dans le pied de page.
 const yearElement = document.getElementById("year");
 

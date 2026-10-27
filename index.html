@@ -18,7 +18,9 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap"
         rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script src="script.js" defer></script>
 </head>
 
@@ -98,8 +100,9 @@
     target="_blank"
     rel="noopener noreferrer"
     class="hero-link"
+    aria-label="LinkedIn"
   >
-    LinkedIn <span>↗</span>
+    <i data-lucide="linkedin"></i>
   </a>
 
   <a
@@ -107,15 +110,17 @@
     target="_blank"
     rel="noopener noreferrer"
     class="hero-link"
+    aria-label="GitHub"
   >
-    GitHub <span>↗</span>
+    <i data-lucide="github"></i>
   </a>
 
   <a
     href="mailto:hamadafaris2024@gmail.com"
     class="hero-link"
+    aria-label="Email"
   >
-    Email <span>↗</span>
+    <i data-lucide="mail"></i>
   </a>
 </div>
 
@@ -412,47 +417,78 @@
       <div class="skills-grid">
 
         <article class="skill-card">
-          <span class="skill-number">01</span>
-          <h3>IA & GenAI</h3>
-          <div class="tags">
-            <span>Machine Learning</span><span>Generative AI</span>
-            <span>NLP</span><span>Multi-Agent Systems</span>
+          <div class="skill-card-header">
+            <span class="skill-number">01</span>
+            <h3>IA & GenAI</h3>
+          </div>
+          <div class="skill-badges">
+            <span class="skill-badge"><i class="devicon-python-plain"></i> Machine Learning</span>
+            <span class="skill-badge"><i class="devicon-tensorflow-original"></i> Generative AI</span>
+            <span class="skill-badge"><i class="skill-icon-text">NLP</i> NLP</span>
+            <span class="skill-badge"><i class="skill-icon-text">MA</i> Multi-Agent Systems</span>
           </div>
         </article>
 
         <article class="skill-card">
-          <span class="skill-number">02</span>
-          <h3>Data & Traitement</h3>
-          <div class="tags">
-            <span>Pandas</span><span>NumPy</span>
-            <span>Data Processing</span><span>Web Scraping</span>
-            <span>SQL</span>
+          <div class="skill-card-header">
+            <span class="skill-number">02</span>
+            <h3>Data & Traitement</h3>
+          </div>
+          <div class="skill-badges">
+            <span class="skill-badge"><i class="devicon-pandas-plain"></i> Pandas</span>
+            <span class="skill-badge"><i class="devicon-numpy-plain"></i> NumPy</span>
+            <span class="skill-badge"><i class="devicon-python-plain"></i> Web Scraping</span>
+            <span class="skill-badge"><i class="devicon-azuresqldatabase-plain"></i> SQL</span>
           </div>
         </article>
 
         <article class="skill-card">
-          <span class="skill-number">03</span>
-          <h3>Programmation</h3>
-          <div class="tags">
-            <span>Python</span><span>Java</span>
-            <span>C</span><span>JavaScript</span>
+          <div class="skill-card-header">
+            <span class="skill-number">03</span>
+            <h3>Programmation</h3>
+          </div>
+          <div class="skill-badges">
+            <span class="skill-badge"><i class="devicon-python-plain"></i> Python</span>
+            <span class="skill-badge"><i class="devicon-java-plain"></i> Java</span>
+            <span class="skill-badge"><i class="devicon-c-plain"></i> C</span>
+            <span class="skill-badge"><i class="devicon-csharp-plain"></i> C#</span>
+            <span class="skill-badge"><i class="devicon-javascript-plain"></i> JavaScript</span>
           </div>
         </article>
 
         <article class="skill-card">
-          <span class="skill-number">04</span>
-          <h3>Bases de données</h3>
-          <div class="tags">
-            <span>MySQL</span><span>MongoDB</span>
+          <div class="skill-card-header">
+            <span class="skill-number">04</span>
+            <h3>Bases de données</h3>
+          </div>
+          <div class="skill-badges">
+            <span class="skill-badge"><i class="devicon-mysql-plain"></i> MySQL</span>
+            <span class="skill-badge"><i class="devicon-mongodb-plain"></i> MongoDB</span>
           </div>
         </article>
 
         <article class="skill-card">
-          <span class="skill-number">05</span>
-          <h3>Développement Web</h3>
-          <div class="tags">
-            <span>React</span><span>PHP</span>
-            <span>HTML</span><span>CSS</span>
+          <div class="skill-card-header">
+            <span class="skill-number">05</span>
+            <h3>Développement Web</h3>
+          </div>
+          <div class="skill-badges">
+            <span class="skill-badge"><i class="devicon-react-original"></i> React</span>
+            <span class="skill-badge"><i class="devicon-php-plain"></i> PHP</span>
+            <span class="skill-badge"><i class="devicon-html5-plain"></i> HTML</span>
+            <span class="skill-badge"><i class="devicon-css3-plain"></i> CSS</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-number">06</span>
+            <h3>Outils & DevOps</h3>
+          </div>
+          <div class="skill-badges">
+            <span class="skill-badge"><i class="devicon-git-plain"></i> Git</span>
+            <span class="skill-badge"><i class="devicon-github-original"></i> GitHub</span>
+            <span class="skill-badge"><i class="devicon-docker-plain"></i> Docker</span>
           </div>
         </article>
 

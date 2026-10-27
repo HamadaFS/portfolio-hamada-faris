@@ -313,7 +313,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center top;
   filter: saturate(.85);
 }
 
@@ -722,14 +722,67 @@ button {
 
 .skill-card {
   min-height: 180px;
+  background:
+    radial-gradient(ellipse at 0% 0%, #ffad4210, transparent 60%),
+    linear-gradient(145deg, #1a1d23, #14161b);
+}
+
+.skill-card-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 18px;
 }
 
 .skill-number {
   color: var(--orange);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  flex-shrink: 0;
 }
 
 .skill-card h3 {
-  font-size: 18px;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #11131880;
+  color: #c7ced8;
+  font-size: 11px;
+  transition: border-color .2s, color .2s;
+}
+
+.skill-badge:hover {
+  border-color: #ffad4255;
+  color: var(--text);
+}
+
+.skill-badge i[class^="devicon"] {
+  font-size: 15px;
+  color: var(--orange);
+}
+
+.skill-icon-text {
+  font-size: 9px;
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--orange);
+  font-style: normal;
 }
 
 .education-list {
@@ -1092,47 +1145,38 @@ button {
 .nav-links a[aria-current="location"] {
   color: var(--orange);
 }
-
-/* Liens sociaux du hero */
 .hero-links {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 24px;
-  margin-top: 22px;
+  gap: 12px;
 }
 
-.hero-links .hero-link {
+.hero-link {
+  width: 40px;
+  height: 40px;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  color: #a9bfd7;
-  font-size: 14px;
-  font-weight: 500;
+  justify-content: center;
+
+  color: #9ca3af;
+  background: #14171c;
+  border: 1px solid #292d35;
+  border-radius: 7px;
+
   text-decoration: none;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease,
+              border-color 0.2s ease,
+              transform 0.2s ease;
 }
 
-.hero-links .hero-link span {
-  color: #ffad38;
-  font-size: 13px;
+.hero-link svg {
+  width: 17px;
+  height: 17px;
+  stroke-width: 1.8;
 }
 
-.hero-links .hero-link:hover {
-  color: #ffad38;
+.hero-link:hover {
+  color: #ffad42;
+  border-color: #ffad42;
   transform: translateY(-2px);
-}
-
-.hero-links .hero-link:focus-visible {
-  outline: 2px solid #ffad38;
-  outline-offset: 4px;
-  border-radius: 3px;
-}
-
-/* Espacement sur les petits écrans */
-@media (max-width: 600px) {
-  .hero-links {
-    gap: 16px;
-    margin-top: 20px;
-  }
 }
