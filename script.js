@@ -1,10 +1,64 @@
 
 "use strict";
 
-// Initialise les icônes Lucide.
-if (typeof lucide !== "undefined") {
-  lucide.createIcons();
-}
+// ── Data-flow card: floating particle background ───────────────────────────
+(function initParticles() {
+  const canvas = document.getElementById("dfCanvas");
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+  let W, H, particles;
+  const COUNT = 28;
+  const COLORS = ["#ffad4255", "#66d4bd44", "#ece9e322"];
+
+  function resize() {
+    W = canvas.offsetWidth;
+    H = canvas.offsetHeight;
+    canvas.width  = W;
+    canvas.height = H;
+  }
+
+  function makeParticle() {
+    return {
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 1.8 + 0.4,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      color: COLORS[Math.floor(Math.random() * COLORS.length)],
+    };
+  }
+
+  function init() {
+    resize();
+    particles = Array.from({ length: COUNT }, makeParticle);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach((p) => {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0) p.x = W;
+      if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H;
+      if (p.y > H) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+
+  // Respect prefers-reduced-motion
+  const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (mq.matches) return;
+
+  init();
+  draw();
+  window.addEventListener("resize", () => { resize(); });
+}());
 
 // Année automatique dans le pied de page.
 const yearElement = document.getElementById("year");

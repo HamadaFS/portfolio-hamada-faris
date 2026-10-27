@@ -20,7 +20,6 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="style.css">
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script src="script.js" defer></script>
 </head>
 
@@ -64,7 +63,7 @@
           <span class="accent-name">Faris.</span>
         </h1>
 
-        <h2>Étudiant ingénieur en IA & Big Data</h2>
+        <h2>Étudiant ingénieur en IA &amp; Big Data</h2>
 
         <p class="hero-description">
           Je transforme les données en solutions intelligentes,
@@ -82,77 +81,126 @@
           <a class="button button-primary" href="#projects">
             Découvrir mes projets ↗
           </a>
-
-          
-         <a class="button button-secondary"
-   href="assets/cv-hamada-faris.pdf"
-   download="Hamada_Faris_CV.pdf">
-  Télécharger mon CV ↓
-</a>
-
+          <a class="button button-secondary"
+             href="assets/cv-hamada-faris.pdf"
+             download="Hamada_Faris_CV.pdf">
+            Télécharger mon CV ↓
+          </a>
         </div>
 
-        
-
-<div class="hero-links">
-  <a
-    href="https://www.linkedin.com/in/hamada-faris/"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="hero-link"
-    aria-label="LinkedIn"
-  >
-    <i data-lucide="linkedin"></i>
-  </a>
-
-  <a
-    href="https://github.com/HamadaFS"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="hero-link"
-    aria-label="GitHub"
-  >
-    <i data-lucide="github"></i>
-  </a>
-
-  <a
-    href="mailto:hamadafaris2024@gmail.com"
-    class="hero-link"
-    aria-label="Email"
-  >
-    <i data-lucide="mail"></i>
-  </a>
-</div>
-
-
+        <div class="hero-links">
+          <a href="https://www.linkedin.com/in/hamada-faris/"
+             target="_blank" rel="noopener noreferrer"
+             class="hero-link" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://github.com/HamadaFS"
+             target="_blank" rel="noopener noreferrer"
+             class="hero-link" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="mailto:hamadafaris2024@gmail.com"
+             class="hero-link" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
       </div>
 
-      <div class="hero-visual">
-        <div class="visual-top">
-          <span><span class="status-dot"></span> PROFIL INGÉNIEUR</span>
-          <span>CASABLANCA · MAROC</span>
+      <!-- DATA-FLOW CARD -->
+      <div class="hero-visual" aria-hidden="true">
+        <canvas class="df-canvas" id="dfCanvas"></canvas>
+
+        <div class="df-header">
+          <span class="df-label">DATA FLOW</span>
+          <span class="df-loc"><span class="status-dot"></span> CASABLANCA · MAROC</span>
         </div>
 
-        <div class="portrait-frame">
-          <img src="assets/photo.jpg"
-               alt="Portrait de Hamada Faris"
-               class="portrait"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <!-- pipeline SVG -->
+        <svg class="df-svg" viewBox="0 0 340 260" xmlns="http://www.w3.org/2000/svg">
+          <!-- grid lines -->
+          <defs>
+            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#ffffff07" stroke-width="1"/>
+            </pattern>
+            <!-- orange glow filter -->
+            <filter id="glow-o" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="glow-t" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <!-- animated dash for pipeline paths -->
+            <style>
+              .df-path-o { stroke-dasharray: 6 5; animation: dash-o 2.4s linear infinite; }
+              .df-path-t { stroke-dasharray: 6 5; animation: dash-t 3s linear infinite; }
+              .df-path-w { stroke-dasharray: 6 5; animation: dash-w 2s linear infinite; }
+              @keyframes dash-o { to { stroke-dashoffset: -44; } }
+              @keyframes dash-t { to { stroke-dashoffset: -44; } }
+              @keyframes dash-w { to { stroke-dashoffset: -44; } }
+              .df-node-pulse { animation: node-pulse 2s ease-in-out infinite; }
+              @keyframes node-pulse {
+                0%,100% { opacity:.7; r:5; }
+                50%      { opacity:1;  r:7; }
+              }
+            </style>
+          </defs>
 
-          <div class="portrait-placeholder">
-            <span>HF<span class="accent">.</span></span>
-            <small>AI · DATA · ENGINEERING</small>
-          </div>
+          <rect width="340" height="260" fill="url(#grid)"/>
+
+          <!-- horizontal spine: orange -->
+          <path class="df-path-o" d="M 30 130 H 310"
+                fill="none" stroke="#ffad42" stroke-width="1.5"
+                filter="url(#glow-o)" opacity=".85"/>
+
+          <!-- branch up: teal -->
+          <path class="df-path-t" d="M 100 130 V 60 H 240 V 130"
+                fill="none" stroke="#66d4bd" stroke-width="1.2"
+                filter="url(#glow-t)" opacity=".75"/>
+
+          <!-- branch down: white -->
+          <path class="df-path-w" d="M 100 130 V 200 H 240 V 130"
+                fill="none" stroke="#ece9e3" stroke-width="1"
+                opacity=".3"/>
+
+          <!-- nodes on spine -->
+          <circle cx="30"  cy="130" r="5" fill="#ffad42" filter="url(#glow-o)"/>
+          <circle cx="100" cy="130" r="5" fill="#ffad42" filter="url(#glow-o)"/>
+          <circle cx="170" cy="130" r="5" fill="#ffad42" filter="url(#glow-o)" class="df-node-pulse"/>
+          <circle cx="240" cy="130" r="5" fill="#ffad42" filter="url(#glow-o)"/>
+          <circle cx="310" cy="130" r="5" fill="#ffad42" filter="url(#glow-o)"/>
+
+          <!-- nodes on teal branch -->
+          <circle cx="100" cy="60"  r="4" fill="#66d4bd" filter="url(#glow-t)"/>
+          <circle cx="170" cy="60"  r="4" fill="#66d4bd" filter="url(#glow-t)" class="df-node-pulse"/>
+          <circle cx="240" cy="60"  r="4" fill="#66d4bd" filter="url(#glow-t)"/>
+
+          <!-- nodes on white branch -->
+          <circle cx="100" cy="200" r="3" fill="#ece9e3" opacity=".5"/>
+          <circle cx="170" cy="200" r="3" fill="#ece9e3" opacity=".5"/>
+          <circle cx="240" cy="200" r="3" fill="#ece9e3" opacity=".5"/>
+
+          <!-- stage labels -->
+          <text x="30"  y="148" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#ffad42" opacity=".9">COLLECT</text>
+          <text x="100" y="148" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#ffad42" opacity=".9">CLEAN</text>
+          <text x="170" y="148" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#ffad42" opacity=".9">MODEL</text>
+          <text x="240" y="148" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#ffad42" opacity=".9">API</text>
+          <text x="310" y="148" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#ffad42" opacity=".9">DEPLOY</text>
+
+          <!-- teal branch labels -->
+          <text x="170" y="52" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#66d4bd" opacity=".8">TRANSFORM</text>
+
+          <!-- white branch labels -->
+          <text x="170" y="216" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#ece9e3" opacity=".4">MONITOR</text>
+        </svg>
+
+        <div class="df-footer">
+          <span class="df-badge">PYTHON</span>
+          <span class="df-badge">ML</span>
+          <span class="df-badge">GENAI</span>
+          <span class="df-caption">RAW DATA → PRODUCTION</span>
         </div>
-
-        <div class="visual-bottom">
-          <span>PYTHON</span>
-          <span>MACHINE LEARNING</span>
-          <span>GENAI</span>
-        </div>
-
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
       </div>
 
       <div class="hero-footer">
